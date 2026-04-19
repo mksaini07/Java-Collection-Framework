@@ -36,5 +36,26 @@ public class Java8Demo {
                 }
             };
             printlist.accept(list);
+        //Supplier
+        Supplier<String> giveHelloWorld  = () -> "Hello world";
+        System.out.println(giveHelloWorld.get());
+
+        //Combined Example
+        Predicate<Integer> predicate = x -> x%2==0;
+        Function<Integer,Integer> function = x -> x*x;
+        Consumer<Integer> consumer = x -> System.out.println(x);
+        Supplier<Integer> supplier = () ->100;
+
+        if(predicate.test(supplier.get())){
+            consumer.accept(function.apply(supplier.get()));
+        }
+
+
+        // Method reference --> use method without invoking & in place of lambda expression
+        List<String> list1 = Arrays.asList("Ram", "Shyam", "Ghansyham");
+        list1.forEach(x-> System.out.println(x));
+        list1.forEach(System.out::println); //Method reference
+
+
     }
 }
