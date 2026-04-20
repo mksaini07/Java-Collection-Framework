@@ -57,6 +57,6 @@ public class Java8Demo {
         list1.forEach(x-> System.out.println(x));
         list1.forEach(System.out::println); //Method reference
 
-
+        
     }
 }
