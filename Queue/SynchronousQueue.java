@@ -1,5 +1,6 @@
 package Queue;
 
+import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 
 public class SynchronousQueue {
